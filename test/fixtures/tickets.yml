@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  seat_id_seq: MyString
+  address: MyText
+  price: 9.99
+  email_address: MyString
+
+two:
+  name: MyString
+  seat_id_seq: MyString
+  address: MyText
+  price: 9.99
+  email_address: MyString

@@ -1,0 +1,47 @@
+<%= link_to 'Back', events_path %>
+
+<%= form_with scope: :event, url: events_path, local: true do |form| %>
+  
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@event.errors.count, "error") %> prohibited
+        this event from being saved:
+      </h2>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+    <%= form.label :artist %><br>
+    <%= form.text_field :artist %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :price_low %><br>
+    <%= form.number_field :price_low %>
+  </p>
+
+   <p>
+    <%= form.label :price_high %><br>
+    <%= form.number_field :price_high %>
+  </p>
+
+  <p>
+    <%= form.label :event_date %><br>
+    <%= form.date_field :event_date %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,7 @@
+<h1> Wszystkie wydarzenia</h1>
+<ul>
+<% for event in @events %>
+<li><%= link_to event.artist, "/events/#{event.id}" %></li>
+<% end %>
+</ul>
+<%= link_to 'Nowe ogłoszenie', new_event_path %>
