@@ -1,0 +1,6 @@
+<h1> Wszystkie wydarzenia</h1>
+<ul>
+<% for event in events %>
+<li><%= event.artist %> <%= link_to 'New Ticket', new_ticket_path(:event_id => event.id) %></li>
+<% end %>
+</ul>

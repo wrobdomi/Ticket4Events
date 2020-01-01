@@ -14,7 +14,8 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @ticket = Ticket.new
+    # @ticket = Ticket.new
+    @ticket = Ticket.new( :event_id => params[:event_id])
   end
 
   # GET /tickets/1/edit
