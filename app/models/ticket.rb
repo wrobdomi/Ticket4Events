@@ -5,5 +5,7 @@ class Ticket < ApplicationRecord
     validates :price, presence: true
     validates :address, presence: true
     validates :phone, presence: true
+    
     belongs_to :event
+    belongs_to :user
 end

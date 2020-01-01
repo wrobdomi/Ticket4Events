@@ -30,5 +30,8 @@
   <%= @ticket.phone %>
 </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<% if @ticket.user == current_user %>
+    <%= link_to 'Edit', edit_ticket_path(@ticket) %>
+<% end %>
+
 <%= link_to 'Back', tickets_path %>

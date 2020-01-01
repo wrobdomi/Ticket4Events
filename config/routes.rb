@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root :to => "pages#home"
+  devise_for :users
+  root :to => "events#home"
 
   resources :events, :only => [:index, :new, :create, :show]
   # get 'events/index'
