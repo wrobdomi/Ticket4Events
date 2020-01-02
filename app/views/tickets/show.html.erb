@@ -1,37 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid show-container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @ticket.name %>
-</p>
+<div class="container">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Seat id seq:</strong>
-  <%= @ticket.seat_id_seq %>
-</p>
+    <h2 class="text-center" style="color: white">Your ticket </h2>
+    
+    <div class="card-custom">
+    <img src="https://source.unsplash.com/ZhQCZjr9fHo/" alt="Concert image" style="width:100%">
+        <div class="container-card">
+            <h4><b><strong>Name: </strong><%= @ticket.name %></b> | <strong>Seat id seq:</strong> <%= @ticket.seat_id_seq %></h4> 
+            <p><strong>Address:</strong> <%= @ticket.address %> |     <strong>Price:</strong> <%= @ticket.price %></p> 
+            <p><strong>Email address:</strong> <%= @ticket.email_address %> </p>
+            <p><strong>Phone:</strong> <%= @ticket.phone %> </p>
+        </div>
+    </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @ticket.address %>
-</p>
+    <div class="row text-center" style="margin-top: 20px">
 
-<p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
-</p>
+        <% if @ticket.user == current_user %>
+            <button class="btn btn-default"> <%= link_to 'Edit', edit_ticket_path(@ticket) %> </button>
+        <% end %>
 
-<p>
-  <strong>Email address:</strong>
-  <%= @ticket.email_address %>
-</p>
+         <button class="btn btn-default">  <%= link_to 'Back', tickets_path %> </button>
+    
+    </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @ticket.phone %>
-</p>
+</div>
 
-<% if @ticket.user == current_user %>
-    <%= link_to 'Edit', edit_ticket_path(@ticket) %>
-<% end %>
-
-<%= link_to 'Back', tickets_path %>
+</div>

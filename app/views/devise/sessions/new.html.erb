@@ -1,26 +1,50 @@
-<h2>Log in</h2>
+<div class="container-fluid posters-image">
+    <div class="container main-home">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+           <div class="row" style="margin-top: 100px;">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+            <div class="col-sm-4 col-md-4" >
+            </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+            <div class="col-sm-4 col-md-4" >
+                <div class="thumbnail" style="background-color:rgba(0, 0, 0, 0.3);">
+                <div class="caption" style="background-color:rgba(0, 0, 0, 0.3);">
+                    <p class="text-center" style="color:white; font-size: 25px;">Tickets4Events - Log in</p>
+                    <p class="panel-desc text-center">Log in and find your next adventure.</p>
+                
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="field">
+                            <%= f.label :email, style: 'color: white;' %><br />
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+                        </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+                        <div class="field">
+                            <%= f.label :password, style: 'color: white;' %><br />
+                            <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+                        </div>
 
-<%= render "devise/shared/links" %>
+                        <% if devise_mapping.rememberable? %>
+                            <div class="field">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me, style: 'color: white;' %>
+                            </div>
+                        <% end %>
+
+                        <div class="actions">
+                            <%= f.submit "Log in", :class => "btn btn-default" %>
+                        </div>
+                        <% end %>
+
+                    <%= render "devise/shared/links" %>
+
+                </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-md-4" >
+            </div>
+
+        </div>
+
+</div>
+</div>

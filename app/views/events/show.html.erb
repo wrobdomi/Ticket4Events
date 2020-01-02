@@ -1,34 +1,39 @@
+<div class="container-fluid events-index-container">
+
 <p id="komunikat"> <%=flash[:komunikat]%> </p>
 
-<%= link_to 'Back', events_path %>
+<div class="container event-details">
 
-<p>
-  <strong>Artist:</strong>
-  <%= @event.artist %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <div class="row">
+        <h2 class="text-center">Event details</h2>
+        <button type="button" class="btn btn-default text-right back-button">   <%= link_to 'Back to all events', events_path %> </button>
+    </div>
 
-<p>
-  <strong>LowPrice:</strong>
-  <%= @event.price_low %>
-</p>
 
-<p>
-  <strong>PriceHigh:</strong>
-  <%= @event.price_high %>
-</p>
+    <div class="row">
+        
+        <div class="col-md-4 text-center">
+            <p> <strong>Artist:</strong> <%= @event.artist %> </p>
+            <p> <strong>Description:</strong> <%= @event.description %> </p>
+        </div>
+        
+        <div class="col-md-4 text-center">
+            <p> <strong>LowPrice:</strong> <%= @event.price_low %> </p>
+            <p> <strong>PriceHigh:</strong> <%= @event.price_high %> </p>
+        </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.event_date %>
-</p>
+        <div class="col-md-4 text-center">
+            <strong>Date:</strong> <%= @event.event_date %>
+        </div>
+        
+    </div>
 
-<%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
+</div>
+
+<% if user_signed_in? %>
+    <%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id, :user_id => current_user.id) %>
+<% end %>
 
 <%= render "tickets_list", tickets: @event.tickets %>
 
-
+</div>

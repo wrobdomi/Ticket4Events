@@ -1,52 +1,82 @@
-<%= form_with(model: ticket, local: true) do |form| %>
-  <% if ticket.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
 
-      <ul>
-        <% ticket.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container buy-ticket-event">
+    
+    <h2 class="text-center">Book a ticket for the event</h2>
+
+    <%= form_with(model: ticket, local: true) do |form| %>
+    <div class="row">
+      
+        <% if ticket.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+            <ul>
+                <% ticket.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+            </div>
         <% end %>
-      </ul>
+
+        <div class="col-md-4 col-sm-4">
+
+            <div class="form-group">
+
+                <div class="field">
+                    <%= form.hidden_field :event_id, :value => ticket.event_id %>
+                </div>
+
+                <div class="field">
+                    <%= form.hidden_field :user_id, :value => ticket.user_id %>
+                </div>
+
+                <div class="field">
+                    <%= form.label :name %>
+                    <%= form.text_field :name, class: "form-control" %>
+                </div>
+
+                <div class="field">
+                    <%= form.label :email_address %>
+                    <%= form.text_field :email_address, class: "form-control" %>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+
+            <div class="field">
+                <%= form.label :address %>
+                <%= form.text_area :address, class: "form-control" %>
+            </div>
+
+            <div class="field">
+                <%= form.label :phone %>
+                <%= form.text_field :phone, class: "form-control" %>
+            </div>
+       
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <div class="field">
+                <%= form.label :seat_id_seq %>
+                <%= form.text_field :seat_id_seq, class: "form-control" %>
+            </div>
+
+             <div class="field">
+                <%= form.label :price %>
+                <%= form.text_field :price, class: "form-control" %>
+            </div>
+        </div>
+
     </div>
-  <% end %>
+    
+    <div class="row text-center" style="margin-top: 20px;  margin-bottom: 15px;">
+        <div class="actions">
+            <%= form.submit 'Book ticket', :class => "btn btn-default" %>
+        </div>
+    </div>
 
-  <div class="field">
-    <%= form.hidden_field :event_id, :value => ticket.event_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :seat_id_seq %>
-    <%= form.text_field :seat_id_seq %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email_address %>
-    <%= form.text_field :email_address %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <% end %>
+</div>

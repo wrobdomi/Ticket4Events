@@ -1,5 +1,12 @@
-<h1>New Ticket</h1>
 
-<%= render 'form', ticket: @ticket %>
+<div class="container-fluid tickets-form-container">
 
-<%= link_to 'Back', tickets_path %>
+    <h1 class="text-center">New Ticket</h1>
+
+    <%= render 'form', ticket: @ticket %>
+
+    <div class="tickets-edit-links">
+        <button type="button" class="btn btn-default text-right">  <%= link_to 'Back', tickets_path %> </button>
+    </div>
+
+</div>

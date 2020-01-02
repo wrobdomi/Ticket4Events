@@ -1,3 +1,52 @@
 // Place all the styles related to the Tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.tickets-index {
+    max-width: 1200px;
+}
+
+.tickets-form-container {
+    // max-width: 1200px;
+    margin: auto;
+    // border: 1px solid red;
+    // position: relative;
+    
+    background-image: url("https://source.unsplash.com/6liebVeAfrY/");
+    background-color: #cccccc;
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.tickets-edit-links {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.show-container{
+     position:fixed;
+    background-image: url("/assets/wheat.png");
+    height: 100%;
+    width: 100%;
+}
+
+
+.card-custom {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-card {
+  padding: 2px 16px;
+}

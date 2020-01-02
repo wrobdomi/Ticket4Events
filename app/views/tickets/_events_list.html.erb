@@ -1,6 +1,16 @@
-<h1> Wszystkie wydarzenia</h1>
-<ul>
-<% for event in events %>
-<li><%= event.artist %> <%= link_to 'New Ticket', new_ticket_path(:event_id => event.id) %></li>
-<% end %>
-</ul>
+<h1 class="text-center"> All events</h1>
+
+    <div class="row">
+
+        <% for event in events %>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <%= event.artist %> <%= link_to 'New Ticket', new_ticket_path(:event_id => event.id) %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+    </div>
+
